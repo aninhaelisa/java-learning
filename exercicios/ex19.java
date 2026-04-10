@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class ex19 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("EXERCICIO 19 - QUADRARO E CUBO DE UM NUMERO");
-        System.out.print("Informe um valo: ");
+        System.out.println("EXERCICIO 19 - QUADRADO E CUBO DE UM NUMERO");
+        System.out.print("Informe um valor: ");
         int valor = sc.nextInt();
         for (int i = 0; i < valor; i++) {
             System.out.println("Número " +(i+1)+": ");
