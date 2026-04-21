@@ -1,0 +1,10 @@
+NOME: Rayan Silva Pedroso - CARGO: Senior Java - SALÁRIO BRUTO: R$6141.48 - IMPOSTO: R$1000.0
+NOME: Mariana Felicia Silva - CARGO: Cozinheira - SALÁRIO BRUTO: R$1859.58 - IMPOSTO: R$200.0
+NOME: Carlos Eduardo Souza - CARGO: Auxiliar Administrativo - SALÁRIO BRUTO: R$2100.00 - IMPOSTO: R$150.0
+NOME: Ana Beatriz Lima - CARGO: Designer Gráfico - SALÁRIO BRUTO: R$3200.75 - IMPOSTO: R$300.0
+NOME: João Victor Mendes - CARGO: Estagiário TI - SALÁRIO BRUTO: R$1200.00 - IMPOSTO: R$50.0
+NOME: Fernanda Alves Rocha - CARGO: Gerente de Projetos - SALÁRIO BRUTO: R$7500.00 - IMPOSTO: R$1200.0
+NOME: Lucas Gabriel Martins - CARGO: Suporte Técnico - SALÁRIO BRUTO: R$1800.90 - IMPOSTO: R$120.0
+NOME: Juliana Costa Ribeiro - CARGO: Analista de RH - SALÁRIO BRUTO: R$3400.00 - IMPOSTO: R$400.0
+NOME: Pedro Henrique Gomes - CARGO: Vendedor - SALÁRIO BRUTO: R$2200.00 - IMPOSTO: R$180.0
+NOME: Camila Fernandes Dias - CARGO: Marketing Digital - SALÁRIO BRUTO: R$4100.30 - IMPOSTO: R$500.0
