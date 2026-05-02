@@ -1,6 +1,6 @@
 package projetosBasicos.modificadoresAcesso.application;
 
-import projetosBasicos.encapsulamento.entities.Pessoa;
+import projetosBasicos.modificadoresAcesso.entities.Pessoa;
 
 public class App {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class App {
 
         // System.out.println(p.nomePrivado); //  erro (private)
         
-        p.mostrar(); // ✔ acessa o privado indiretamente
+        p.mostrarDentroDaClasse(); // ✔ acessa o privado indiretamente
     
     }
 }
