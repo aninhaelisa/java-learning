@@ -1,13 +1,41 @@
 package projetosBasicos.encapsulamento.entities;
 
 public class Pessoa {
-    public String nomePublico = "Ana";
-    private String nomePrivado = "Segredo";
+    private String nome;
+    private int idade;
+    private double altura;
 
-    public void mostrar() {
-        System.out.println(nomePublico);  // ✔ funciona
-        System.out.println(nomePrivado); // ✔ funciona (mesma classe)
+    // Construtor
+    public Pessoa(String nome, int idade, double altura) {
+        this.nome = nome;
+        this.idade = idade;
+        this.altura = altura;
     }
 
+    // Getters
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    // Setters
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
     
 }
