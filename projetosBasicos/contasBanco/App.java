@@ -38,6 +38,20 @@ public class App {
             conta5.atualizarSaldo();
             System.out.println("Saldo atualizado: " + conta5);
         }
-        
+
+        //-------------------------------------------------------------------------------------------------------------------------
+        System.out.println();
+        System.out.println("TESTES DE SAQUE:");
+        Conta conta6 = new Conta("Ana", 800.0, 11223);
+        conta6.saque(200.00);
+        System.out.println("Conta6: " + conta6); //desconta 200 + 5 de taxa de saque
+
+        ContaPopanca conta7 = new ContaPopanca("Pedro", 500.0, 33445, 0.03);
+        conta7.saque(100.00);
+        System.out.println("Conta7: " + conta7);
+
+        Conta conta8 = new ContaPro("Lucas", 1000.0, 55667, 400.0);
+        conta8.saque(300.00);
+        System.out.println("Conta8: " + conta8); //desconta 300 + 5 de taxa de saque + 2 de taxa adicional para conta Pro
     }
 }

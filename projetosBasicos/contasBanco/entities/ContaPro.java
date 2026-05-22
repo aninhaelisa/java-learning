@@ -26,4 +26,10 @@ public class  ContaPro extends Conta{
 
     }
 
+    @Override
+    public void saque(double valor) {
+        super.saque(valor); // O super aqui serve para chamar o método saque da classe mãe (Conta), que já desconta o valor do saque e a taxa de saque de 5.0. Depois disso, fazemos o desconto da taxa adicional de saque para conta Pro.
+        saldo -= 2.0; //Taxa adicional de saque para conta Pro
+    }
+
 }

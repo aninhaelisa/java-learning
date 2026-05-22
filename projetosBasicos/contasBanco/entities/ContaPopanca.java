@@ -22,4 +22,9 @@ public class ContaPopanca extends Conta{
     public void atualizarSaldo(){
         saldo += saldo * juros;
     }
+
+    @Override //Isso serve para avisar o compilador que estamos Sobrescrevendo um metodo. --> Se não existisse o método saque, o compilador iria avisar que estamos tentando sobrescrever um método que não existe.
+    public void saque(double valor) {
+        saldo -= valor; //Sem taxa de saque  para conta poupança
+    }
 }
