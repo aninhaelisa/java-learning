@@ -51,7 +51,18 @@ public class App {
         System.out.println("Conta7: " + conta7);
 
         Conta conta8 = new ContaPro("Lucas", 1000.0, 55667, 400.0);
-        conta8.saque(300.00);
+        conta8.saque(300.00); 
         System.out.println("Conta8: " + conta8); //desconta 300 + 5 de taxa de saque + 2 de taxa adicional para conta Pro
+    
+    
+        System.out.println();
+        System.out.println("Introdução a Polimorfismo");
+        Conta x = new Conta("Mariana", 200.0, 99999);
+        Conta y = new ContaPopanca("Henrique", 200.0, 88888, 0.02);
+        x.saque(50.0);
+        y.saque(50.0);
+        System.out.println("X: " + x.getSaldo());
+        System.out.println("Y: " + y.getSaldo());
+
     }
 }
