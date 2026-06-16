@@ -34,9 +34,17 @@ public class Reserva {
         return diff / (1000 * 60 * 60 * 24);
     }
 
-    public void atualizarDatas(Date checkIn, Date checkOut) {
+    public String atualizarDatas(Date checkIn, Date checkOut) {
+        Date hoje = new Date();
+            if (checkIn.before(hoje) || checkOut.before(hoje)) {
+                return "Erro na reserva: As datas para atualização devem ser futuras.";
+            } 
+            if (!checkOut.after(checkIn)) {
+                return "Erro na reserva: A data de check-out deve ser posterior à data de check-in.";
+            } 
         this.checkIn = checkIn;
         this.checkOut = checkOut;
+        return null;
     }
 
     @Override
