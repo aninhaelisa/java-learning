@@ -1,7 +1,9 @@
-package projetosBasicos.excecoesPersonalizadas.model;
+package projetosBasicos.excecoesPersonalizadas.model.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import projetosBasicos.excecoesPersonalizadas.model.exceptions.DomainExcepition;
 
 public class Reserva {
     private Integer numeroQuarto;
@@ -10,7 +12,12 @@ public class Reserva {
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Reserva(Integer numeroQuarto, Date checkIn, Date checkOut) {
+    public Reserva(Integer numeroQuarto, Date checkIn, Date checkOut){
+
+        if (!checkOut.after(checkIn)) {
+            throw new DomainExcepition("Erro na reserva: A data de check-out deve ser posterior à data de check-in.");
+        } 
+
         this.numeroQuarto = numeroQuarto;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -34,17 +41,16 @@ public class Reserva {
         return diff / (1000 * 60 * 60 * 24);
     }
 
-    public String atualizarDatas(Date checkIn, Date checkOut) {
+    public void atualizarDatas(Date checkIn, Date checkOut){
         Date hoje = new Date();
             if (checkIn.before(hoje) || checkOut.before(hoje)) {
-                return "Erro na reserva: As datas para atualização devem ser futuras.";
+                throw new DomainExcepition("Erro na reserva: As datas para atualização devem ser futuras.");
             } 
             if (!checkOut.after(checkIn)) {
-                return "Erro na reserva: A data de check-out deve ser posterior à data de check-in.";
+                throw new DomainExcepition("Erro na reserva: A data de check-out deve ser posterior à data de check-in.");
             } 
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        return null;
     }
 
     @Override

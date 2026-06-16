@@ -5,23 +5,22 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-import projetosBasicos.excecoesPersonalizadas.model.Reserva;
+import projetosBasicos.excecoesPersonalizadas.model.entities.Reserva;
+import projetosBasicos.excecoesPersonalizadas.model.exceptions.DomainExcepition;
 
 public class App {
     public static void main(String[] args) throws ParseException {
         Scanner sc = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-        System.out.print("Número do quarto: ");
-        int numeroQuarto = sc.nextInt();
-        System.out.print("Data de check-in (dd/MM/yyyy): ");
-        Date checkIn = sdf.parse(sc.next());
-        System.out.print("Data de check-out (dd/MM/yyyy): ");
-        Date checkOut = sdf.parse(sc.next());
+        try{
+            System.out.print("Número do quarto: ");
+            int numeroQuarto = sc.nextInt();
+            System.out.print("Data de check-in (dd/MM/yyyy): ");
+            Date checkIn = sdf.parse(sc.next());
+            System.out.print("Data de check-out (dd/MM/yyyy): ");
+            Date checkOut = sdf.parse(sc.next());
 
-        if (!checkOut.after(checkIn)) {
-            System.out.println("Erro na reserva: A data de check-out deve ser posterior à data de check-in.");
-        } else {
             Reserva reserva = new Reserva(numeroQuarto, checkIn, checkOut);
             System.out.println("Reserva: " + reserva);
 
@@ -32,14 +31,15 @@ public class App {
             System.out.print("Data de check-out (dd/MM/yyyy): ");
             checkOut = sdf.parse(sc.next());
 
-            String error = reserva.atualizarDatas(checkIn, checkOut);
-            if(error != null) {
-                System.out.println("Erro em reserva: " + error);
-            } else
+            reserva.atualizarDatas(checkIn, checkOut);
             System.out.println("Reserva atualizada: " + reserva);
-
-        }
-
+    } catch (ParseException e) {
+        System.out.println("Formato de data inválido. Por favor, use o formato dd/MM/yyyy.");
+    } catch(DomainExcepition e) {
+        System.out.println( e.getMessage());
+    } catch(RuntimeException e) {
+        System.out.println("Erro inesperado");
+    }
         sc.close();
     }
 }
