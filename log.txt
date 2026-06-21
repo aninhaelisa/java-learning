@@ -1,0 +1,5 @@
+Arquivo criado: t1 - 21/06/2026 17:41:01
+Arquivo criado: t2 - 21/06/2026 17:41:01
+Arquivo renomeado: t1 para a1 - 21/06/2026 17:41:01
+Arquivo criado: t3 - 21/06/2026 17:41:01
+Arquivo deletado: t2 - 21/06/2026 17:41:01
