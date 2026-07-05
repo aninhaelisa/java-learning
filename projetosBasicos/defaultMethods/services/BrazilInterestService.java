@@ -1,20 +1,16 @@
 package projetosBasicos.defaultMethods.services;
 
-public class BrazilInterestService {
+public class BrazilInterestService implements InterestService {
     private double interestRate;
 
     public BrazilInterestService(double interestRate){
         this.interestRate = interestRate;
     }
 
+    @Override
     public double getInterestRate() {
-        return interestRate;
+        return interestRate; // este metodo fica apenas aqui pois interface não pode armazenar estado
     }
 
-    public double payment(double amount, int months) {
-        if(months < 0){
-            throw new IllegalArgumentException("Months cannot be negative");
-        }
-        return amount * Math.pow(1 + interestRate / 100.0, months);
-    }
+
 }

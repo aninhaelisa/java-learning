@@ -6,6 +6,8 @@ import java.util.Scanner;
 // import projetosBasicos.defaultMethods.services.BrazilInterestService;
 import projetosBasicos.defaultMethods.services.UsaInterestService;
 
+import projetosBasicos.defaultMethods.services.InterestService;
+
 public class App {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
@@ -16,7 +18,7 @@ public class App {
         System.out.print("Months: ");
         int months = sc.nextInt();
 
-        UsaInterestService is = new UsaInterestService(1.0);
+        InterestService is = new UsaInterestService(1.0);
         double payment = is.payment(amount, months);
 
         System.out.println("Payment after " + months + " months: " + String.format("%.2f", payment));
