@@ -12,6 +12,9 @@ public class App {
         set.add("notebook");
         set.add("Tablet");
 
+       // set.removeIf(x -> x.length() >= 3);
+        set.removeIf(x -> x.charAt(0) == 'T');
+
         System.out.println(set.contains("Tablet"));
         System.out.println(set.contains("set"));
 
