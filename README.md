@@ -36,6 +36,8 @@ Este repositório documenta minha evolução em Java, reunindo exercícios e pro
 - Web services com Spring Boot e JPA
 - Interface gráfica com JavaFX
 
+> **Aviso:** Este é um repositório de aprendizado. Alguns exercícios utilizam arquivos locais e podem exigir ajustes nos caminhos de pastas ou a criação de arquivos de teste para funcionar corretamente.
+
 ## ✍️ Autor
 Ana Elisa :D
 [![GitHub](https://img.shields.io/badge/GitHub-Perfil-000?logo=github)](https://github.com/aninhaelisa)
