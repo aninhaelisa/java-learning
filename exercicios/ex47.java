@@ -16,7 +16,7 @@ public class ex47 {
 
         String path_csv = "txt\\ex47_Votos.csv";
         String path_txt = "txt\\ex47_Votos.txt";
-        String slip = ",";
+        String slip = ";";
 
         Map<String, Integer> votos = new HashMap<>();
 

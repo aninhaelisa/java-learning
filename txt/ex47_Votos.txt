@@ -1,5 +1,3 @@
-NOME CANDIDATO: Daniel Ferreira ------- NÚMERO DE VOTOS: 50
-NOME CANDIDATO: Hugo motta ------- NÚMERO DE VOTOS: 56
-NOME CANDIDATO: Ana Flavia ------- NÚMERO DE VOTOS: 59
-NOME CANDIDATO: Karina Luiza Santos ------- NÚMERO DE VOTOS: 67
-NOME CANDIDATO: Kaio Juliano ------- NÚMERO DE VOTOS: 47
+NOME CANDIDATO: Lucia Santos ------- NÚMERO DE VOTOS: 200
+NOME CANDIDATO: Juarez Ferreira Silva ------- NÚMERO DE VOTOS: 140
+NOME CANDIDATO: Karina Luiza Lima ------- NÚMERO DE VOTOS: 500
