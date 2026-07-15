@@ -19,7 +19,7 @@ public class ex45 {
         int op = -1;
         System.out.print("usuario: ");
         String nomeUser = sc.nextLine();
-        String slip = ",";
+        String slip = ";";
         String path = "txt\\ex45_CadastroAlunos.csv";
 
         while (op != 0) {
