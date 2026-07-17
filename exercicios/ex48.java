@@ -8,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -25,7 +27,14 @@ public class ex48 {
         String path_txt = "txt\\ex48_Biblioteca.txt";
         String path_txt_emprestimo = "txt\\ex48_emprestimos.txt";
 
+    try{
+
         while (op != 0) {
+
+            LocalDateTime dataHora = LocalDateTime.now();
+            DateTimeFormatter fmtt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+            String dataHoraFmtt = dataHora.format(fmtt);
+
             System.out.println();
             System.out.println("SISTEMA DA BIBLIOTECA");
             System.out.println("1 - Cadastrar Livro   |   2 - Buscar Livro");
@@ -64,7 +73,8 @@ public class ex48 {
                         }
                         bw.write("LIVRO: " + nomeLivro + " AUTOR/A: " + nomeAutor + " QUANTIDADE: " + quantLivro);
                     } catch (Exception e) {
-                        System.out.println("Erro ao escrever o arquivo .txt: " + e.getMessage() + "||| TENTE NOVAMENTE");
+                        System.out
+                                .println("Erro ao escrever o arquivo .txt: " + e.getMessage() + "||| TENTE NOVAMENTE");
                     }
 
                     break;
@@ -131,50 +141,154 @@ public class ex48 {
                 case 5:
                     System.out.println("REMOVER LIVRO");
                     sc.nextLine();
-                    System.out.print("Nome do aluno que deseja remover: ");
+                    System.out.print("Nome do livro que deseja remover: ");
                     String nomeRemover = sc.nextLine();
 
-                    List<String> lineRemover = Files.readAllLines(Paths.get(path_txt));
+                    List<String> lineRemovertxt = Files.readAllLines(Paths.get(path_txt));
+                    List<String> lineRemovercsv = Files.readAllLines(Paths.get(path_csv));
                     livroEncontrado = false;
 
-                    int remover = 0;
+                    int remover = -1;
 
-                    for (int i = 0; i < lineRemover.size(); i++) {
-                        String linha = lineRemover.get(i);
-                        if (linha.startsWith("LIVRO: "+nomeRemover) || linha.equals(nomeRemover)) {
-                            remover++;
+                    for (int i = 0; i < lineRemovertxt.size(); i++) {
+                        String linha = lineRemovertxt.get(i);
+                        if (linha.startsWith("LIVRO: " + nomeRemover) || linha.equals(nomeRemover)) {
+                            remover = i;
+                            livroEncontrado = true;
+                            break;
+                        }
+                    }
+                    for (int i = 0; i < lineRemovercsv.size(); i++) {
+                        String linha = lineRemovercsv.get(i);
+                        if (linha.startsWith(nomeRemover + split) || linha.equals(nomeRemover)) {
                             livroEncontrado = true;
                             break;
                         }
                     }
 
                     if (livroEncontrado) {
-                        Files.write(Paths.get(path_txt), lineRemover);
+                        lineRemovertxt.remove(remover);
+                        lineRemovercsv.remove(remover);
+                        Files.write(Paths.get(path_txt), lineRemovertxt);
+                        Files.write(Paths.get(path_csv), lineRemovercsv);
+
+                        System.out.println("Livro removido com sucesso!");
+                    } else {
+                        System.out.println("Livro não encontrado!");
+                    }
+                    break;
+
+                case 6:
+                    sc.nextLine();
+                    System.out.println("EMPRESTAR LIVRO");
+                    System.out.print("LEITOR: ");
+                    String leitor = sc.nextLine();
+                    System.out.print("LIVRO: ");
+                    nomeBuscar = sc.nextLine();
+                    int emprestimo = -1;
+                    livro = null;
+                    List<String> lineBuscartxt = Files.readAllLines(Paths.get(path_txt));
+                    List<String> linebuscarcsv = Files.readAllLines(Paths.get(path_csv));
+                    livroEncontrado = false;
+
+                    for (int i = 0; i < lineBuscartxt.size(); i++) {
+                        String linha = lineBuscartxt.get(i);
+                        if (linha.startsWith("LIVRO: " + nomeBuscar)) {
+                            livroEncontrado = true;
+                            emprestimo = i;
+                            livro = Arrays.asList(linha.split(split));
+                            break;
+                        }
+                    }
+
+                    if (livroEncontrado) {
+                        System.out.print("LIVRO ENCONTRADO: ");
+                        System.out.println(livro);
+                        String linha = linebuscarcsv.get(emprestimo);
+
+                        String[] partes = linha.split(";");
+                        int qtd = Integer.parseInt(partes[2]);
+
+                        if (qtd > 0) {
+
+                            partes[2] = String.valueOf(qtd - 1);
+                            linebuscarcsv.set(emprestimo, String.join(";", partes));
+
+                            String linhaTxt = lineBuscartxt.get(emprestimo);
+                            linhaTxt = linhaTxt.replace(
+                                    "QUANTIDADE: " + qtd,
+                                    "QUANTIDADE: " + (qtd - 1));
+                            lineBuscartxt.set(emprestimo, linhaTxt);
+
+                            Files.write(Paths.get(path_txt), lineBuscartxt);
+                            Files.write(Paths.get(path_csv), linebuscarcsv);
+
+                            System.out.println("Empréstimo realizado com sucesso!");
+
+                            try (BufferedWriter bw = new BufferedWriter(new FileWriter(path_txt_emprestimo, true))) {
+                                if (new File(path_txt_emprestimo).length() > 0) {
+                                    bw.newLine();
+                                }
+                                bw.write("O leitor " + leitor + " realizou o emprestimo do livro " + nomeBuscar
+                                        + " no dia e hora: " + dataHoraFmtt);
+                            } catch (Exception e) {
+                                System.out
+                                        .println("Erro ao escrever o arquivo .txt: " + e.getMessage()
+                                                + "||| TENTE NOVAMENTE");
+                            }
+
+                        } else {
+                            System.out.println("Não há exemplares disponíveis.");
+                        }
+
+                    } else {
+                        System.out.println("Livro não encontrado! Confira se o nome esta escrito corretamente");
+                    }
+                    break;
+                case 7:
+                    System.out.println("REMOVER EMPRESTIMO");
+                    sc.nextLine();
+                    System.out.print("LEITOR: ");
+                    String leitorRemover = sc.nextLine();
+
+                    List<String> lineRemoverEmprestimo = Files.readAllLines(Paths.get(path_txt_emprestimo));
+                    livroEncontrado = false;
+
+                    int removerEmprestimo = -1;
+
+                    for (int i = 0; i < lineRemoverEmprestimo.size(); i++) {
+                        String linha = lineRemoverEmprestimo.get(i);
+                        if (linha.startsWith("O leitor " + leitorRemover) || linha.equals(leitorRemover)) {
+                            removerEmprestimo = i;
+                            livroEncontrado = true;
+                            break;
+                        }
+                    }
+
+                    if (livroEncontrado) {
+                        lineRemoverEmprestimo.remove(removerEmprestimo);
+                        Files.write(Paths.get(path_txt_emprestimo), lineRemoverEmprestimo);
 
                         System.out.println("Livro removido com sucesso!");
                     } else {
                         System.out.println("Livro não encontrado!");
                     }
 
-                    System.out.println();
                     break;
-                case 6:
-                    System.out.println("EMPRESTAR LIVRO");
 
-                    break;
-                case 7:
-                    System.out.println("REMOVER EMPRESTIMO");
-
-                    break;
                 case 0:
                     System.out.println("SISTEMA ENCERRADO");
                     break;
+
                 default:
                     System.out.println("OPCAO INVALIDA");
                     System.out.println();
                     break;
             }
         }
+    } catch(Exception e){
+        System.out.println("Erro ao executar o programa: " + e.getMessage());
+    }
 
         sc.close();
     }
