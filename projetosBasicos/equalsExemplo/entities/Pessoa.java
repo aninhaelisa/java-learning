@@ -32,4 +32,13 @@ public class Pessoa {
         this.id = id;
     }
 
+    //CONSTRUTOR VAZIO
+    public Pessoa(){
+    }
+
+    //toString
+    public String toString(){
+        return "NOME: " + nome + " | " + "IDADE: " + idade + " | " + "ID: " + id + " | ";
+    }
+
 }
