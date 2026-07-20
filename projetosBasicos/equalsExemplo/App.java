@@ -40,6 +40,11 @@ public class App {
                 System.out.println(pessoaI);
             }
 
+            Pessoa pessoa1 = pessoasList.get(0);
+            Pessoa pessoa2 = pessoasList.get(1);
+
+            System.out.println("EQUALS: " + pessoa1.equals(pessoa2));
+
             sc.close();
         } catch (Exception e) {
             System.out.println("ERRO AO EXECUTAR O PROGRAMA: " + e.getMessage());
