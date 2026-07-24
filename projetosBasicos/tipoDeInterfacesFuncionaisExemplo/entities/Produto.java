@@ -1,4 +1,4 @@
-package projetosBasicos.predicateExemplo.entities;
+package projetosBasicos.tipoDeInterfacesFuncionaisExemplo.entities;
 
 public class Produto{
     private String nome;

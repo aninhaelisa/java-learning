@@ -1,12 +1,13 @@
-package projetosBasicos.predicateExemplo;
+package projetosBasicos.tipoDeInterfacesFuncionaisExemplo;
 
 import java.util.Locale;
 import java.util.function.Predicate;
+
+import projetosBasicos.tipoDeInterfacesFuncionaisExemplo.entities.Produto;
+import projetosBasicos.tipoDeInterfacesFuncionaisExemplo.util.ProdutoPredicate;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import projetosBasicos.predicateExemplo.entities.Produto;
-import projetosBasicos.predicateExemplo.util.ProdutoPredicate;
 
 public class App {
     public static void main(String[] args) {

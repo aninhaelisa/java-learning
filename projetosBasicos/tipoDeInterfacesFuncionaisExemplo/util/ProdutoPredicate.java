@@ -1,7 +1,8 @@
-package projetosBasicos.predicateExemplo.util;
+package projetosBasicos.tipoDeInterfacesFuncionaisExemplo.util;
 
-import projetosBasicos.predicateExemplo.entities.Produto;
 import java.util.function.Predicate;
+
+import projetosBasicos.tipoDeInterfacesFuncionaisExemplo.entities.Produto;
 
 public class ProdutoPredicate implements Predicate<Produto>{
     @Override
