@@ -1,42 +1,51 @@
 package projetosBasicos.tipoDeInterfacesFuncionaisExemplo.entities;
 
-public class Produto{
+public class Produto {
     private String nome;
     private Double preco;
 
-    public Produto(){
+    public Produto() {
     }
 
-    public Produto(String nome, double preco){
+    public Produto(String nome, double preco) {
         this.nome = nome;
         this.preco = preco;
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome){
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public double getPreco(){
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco){
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 
-    public static boolean staticProdutoPredicate(Produto p){
-        return p.getPreco() >= 100;
+    // Predicate
+    // public static boolean staticProdutoPredicate(Produto p){
+    // return p.getPreco() >= 100;
+    // }
+    // public boolean nonstaticProdutoPredicate(){
+    // return preco >= 100;
+    // }
+
+    // Consumer
+    public static void staticPriceProduto(Produto p) {
+        p.setPreco(p.getPreco() * 1.1);
     }
 
-    public boolean nonstaticProdutoPredicate(){
-        return preco >= 100;
+    public void nonstaticPriceProduto() {
+        preco = (preco * 1.1);
     }
 
-    public String toString(){
+    public String toString() {
         return String.format("Nome: %s Preco: %.2f", nome, preco);
     }
 }
