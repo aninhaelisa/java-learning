@@ -18,7 +18,7 @@ public class App {
         list.add(new Produto("HD Case", 80.00));
 
         ProdutoService ps = new ProdutoService();
-        double sum =  ps.filteredSum(list);
+        double sum =  ps.filteredSum(list, p -> p.getNome().charAt(0) == 'T');
 
         System.out.println("Sum: " + String.format("%.2f", sum));
     }
