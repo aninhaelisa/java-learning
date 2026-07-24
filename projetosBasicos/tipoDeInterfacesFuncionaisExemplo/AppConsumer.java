@@ -20,13 +20,13 @@ public class AppConsumer {
         list.add(new Produto("HD case", 80.00));
 
         // atualiza o preço de todos os produtos mutiplicando por 1.1
-
         // list.forEach(new PriceUpdate());
         // list.forEach(Produto::staticPriceProduto);
         // list.forEach(Produto::nonstaticPriceProduto);
         // Consumer<Produto> cons = p -> p.setPreco(p.getPreco()*1.1);
         // list.forEach(cons);
         list.forEach(p -> p.setPreco(p.getPreco() * 1.1));
+        
         list.forEach(System.out::println);
 
         System.out.println();

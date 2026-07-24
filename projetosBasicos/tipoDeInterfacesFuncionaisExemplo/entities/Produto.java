@@ -37,12 +37,19 @@ public class Produto {
     // }
 
     // Consumer
-    public static void staticPriceProduto(Produto p) {
-        p.setPreco(p.getPreco() * 1.1);
-    }
+    // public static void staticPriceProduto(Produto p) {
+    // p.setPreco(p.getPreco() * 1.1);
+    // }
+    // public void nonstaticPriceProduto() {
+    // preco = (preco * 1.1);
+    // }
 
-    public void nonstaticPriceProduto() {
-        preco = (preco * 1.1);
+    //Function
+    public static String staticUpperCaseName(Produto p){
+        return p.getNome().toUpperCase();
+    } 
+    public  String nonstaticUpperCaseName(){
+        return nome.toUpperCase();
     }
 
     public String toString() {
