@@ -28,6 +28,14 @@ public class Produto{
         this.preco = preco;
     }
 
+    public static boolean staticProdutoPredicate(Produto p){
+        return p.getPreco() >= 100;
+    }
+
+    public boolean nonstaticProdutoPredicate(){
+        return preco >= 100;
+    }
+
     public String toString(){
         return String.format("Nome: %s Preco: %.2f", nome, preco);
     }
