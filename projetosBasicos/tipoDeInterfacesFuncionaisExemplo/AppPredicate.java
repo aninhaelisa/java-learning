@@ -9,7 +9,7 @@ import projetosBasicos.tipoDeInterfacesFuncionaisExemplo.util.ProdutoPredicate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class App {
+public class AppPredicate {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         List<Produto> list = new ArrayList<>();
