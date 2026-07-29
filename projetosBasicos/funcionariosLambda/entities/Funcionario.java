@@ -15,7 +15,7 @@ public class Funcionario {
     }
 
     public String toString(){
-        return String.format("%s,%s,%.2f", nome, email, salario);
+        return String.format("NOME: %s EMAIL: %s SALARIO: %.2f ", nome, email, salario);
     }
 
     public String getNome(){
