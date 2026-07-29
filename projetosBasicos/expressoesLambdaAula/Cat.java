@@ -1,4 +1,4 @@
-package projetosBasicos.expressoesLambdaAula;
+/*ackage projetosBasicos.expressoesLambdaAula;
 
 public class Cat implements Printable{
     public String name;
@@ -11,4 +11,4 @@ public class Cat implements Printable{
     public void print() {
         System.out.println("MEOW");
     }
-}
+}*/

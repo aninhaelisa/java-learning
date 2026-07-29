@@ -1,5 +1,6 @@
 package projetosBasicos.expressoesLambdaAula;
 
+@FunctionalInterface
 public interface Printable {
-        void print();
+        String print(String suffix);
 } 
