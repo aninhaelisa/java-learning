@@ -36,8 +36,9 @@ Este repositório documenta minha evolução em Java, reunindo exercícios e pro
 - Web services com Spring Boot e JPA
 - Interface gráfica com JavaFX
 
-> **Aviso:** Este é um repositório de aprendizado. Alguns exercícios utilizam arquivos locais e podem exigir ajustes nos caminhos de pastas ou a criação de arquivos de teste para funcionar corretamente.
-> **Nota:** A pasta `txt` também contém arquivos `.csv`. O nome foi mantido por compatibilidade com a estrutura original do projeto.
+> Aviso: Este é um repositório de aprendizado. Alguns exercícios utilizam arquivos locais e podem exigir a criação de arquivos de teste ou a adaptação dos caminhos dos arquivos para funcionar corretamente.
+
+> Nota: Apesar do nome txt, essa pasta também contém arquivos no formato .csv. O nome foi mantido apenas para preservar a estrutura original do projeto.
 
 ## ✍️ Autor
 Ana Elisa :D
