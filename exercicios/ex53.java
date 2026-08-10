@@ -21,13 +21,16 @@ public class ex53 {
 
             System.out.println("-".repeat(10));
 
-            for(int i = 0; i<11; i++){
-                System.out.print("Carregando: ");
-                System.out.print("#".repeat(i));
+            System.out.print("Carregando: ");
+            for(int i = 0; i<10; i++){
+                System.out.print("#");
                 n -= 10;
                 Thread.sleep(1000);
             }
+            System.out.println();
+            System.out.println("-".repeat(10));
 
+            System.out.println("Carregamento concluído!");
 
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
