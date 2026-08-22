@@ -17,10 +17,10 @@ public class App {
             st = conn.createStatement();
             int linhas1 = st.executeUpdate("UPDATE seller SET BaseSalary = 2090 WHERE DepartmentId = 1");
 
-            int x = 1;
+            /*int x = 1;
             if (x < 2) {
                 throw new SQLException("ERRO FALSO");
-            }
+            }*/
 
             int linhas2 = st.executeUpdate("UPDATE seller SET BaseSalary = 3090 WHERE DepartmentId = 2");
             conn.commit();
