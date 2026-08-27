@@ -31,5 +31,11 @@ public class App {
         for(Seller obj: list){
             System.out.println(obj);
         }
+
+        System.out.println();
+        System.out.println("--".repeat(10) + "TESTE 4 SELLER sellerInsert: " + "--".repeat(10));
+        Seller newSeller = new Seller(null, "Grag", "grag@email.com", new Date(), 4000.00, department);
+        sellerDao.insert(newSeller);
+        System.out.println("INSERIDO! New Id: " + newSeller.getId());
     }
 }
