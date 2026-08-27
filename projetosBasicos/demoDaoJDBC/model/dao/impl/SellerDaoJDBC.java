@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.text.html.HTMLDocument.HTMLReader.PreAction;
-
 import projetosBasicos.demoDaoJDBC.model.dao.SellerDao;
 import projetosBasicos.demoDaoJDBC.model.entities.Department;
 import projetosBasicos.demoDaoJDBC.model.entities.Seller;
