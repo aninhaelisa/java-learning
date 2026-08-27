@@ -1,6 +1,7 @@
 package projetosBasicos.demoDaoJDBC;
 
 import java.util.Date;
+import java.util.List;
 
 import projetosBasicos.demoDaoJDBC.model.dao.DaoFactory;
 import projetosBasicos.demoDaoJDBC.model.dao.SellerDao;
@@ -15,5 +16,13 @@ public class App {
         System.out.println("--".repeat(10) + "TESTE 1 SELLER FINDBYID: " + "--".repeat(10));
         Seller seller = sellerDao.findById(3);
         System.out.println(seller);
+
+        System.out.println();
+        System.out.println("--".repeat(10) + "TESTE 2 SELLER FINDBYDEPARTMENT: " + "--".repeat(10));
+        Department department = new Department(2, null);
+        List<Seller> list = sellerDao.findByDepartment(department);
+        for(Seller obj: list){
+            System.out.println(obj);
+        }
     }
 }

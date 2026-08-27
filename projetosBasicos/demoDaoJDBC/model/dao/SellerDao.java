@@ -2,6 +2,7 @@ package projetosBasicos.demoDaoJDBC.model.dao;
 
 import java.util.List;
 
+import projetosBasicos.demoDaoJDBC.model.entities.Department;
 import projetosBasicos.demoDaoJDBC.model.entities.Seller;
 
 public interface SellerDao {
@@ -10,5 +11,6 @@ public interface SellerDao {
     void deleteById(Integer id);
     Seller findById(Integer id);
     List<Seller> findAll();
+    List<Seller> findByDepartment(Department department);
 
 }
