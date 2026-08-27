@@ -2,6 +2,7 @@ package projetosBasicos.demoDaoJDBC;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import projetosBasicos.demoDaoJDBC.model.dao.DaoFactory;
 import projetosBasicos.demoDaoJDBC.model.dao.SellerDao;
@@ -10,6 +11,7 @@ import projetosBasicos.demoDaoJDBC.model.entities.Seller;
 
 public class App {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
@@ -44,5 +46,13 @@ public class App {
         seller.setName("Marta Waine");
         sellerDao.update(seller);
         System.out.println("Update Completo! ");
+
+        System.out.println();
+        System.out.println("--".repeat(10) + "TESTE 6 SELLER DELETE: " + "--".repeat(10));
+        System.out.print("ID DELETE: ");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("DELETADO COM SUCESSO! " + id);
+        sc.close();
     }
 }
