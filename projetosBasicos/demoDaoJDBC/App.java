@@ -24,5 +24,12 @@ public class App {
         for(Seller obj: list){
             System.out.println(obj);
         }
+
+        System.out.println();
+        System.out.println("--".repeat(10) + "TESTE 3 SELLER FINDBYALL: " + "--".repeat(10));
+        list = sellerDao.findAll();
+        for(Seller obj: list){
+            System.out.println(obj);
+        }
     }
 }
