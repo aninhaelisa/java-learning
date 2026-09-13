@@ -33,7 +33,7 @@ Este repositório documenta minha evolução em Java, reunindo exercícios e pro
 - JDBC
 
 ### 🌐 Desenvolvimento
-- Web services com Spring Boot e JPA
+- Web services com Spring Boot e JPA <- momento atual
 - Interface gráfica com JavaFX
 
 > Aviso: Este é um repositório de aprendizado. Alguns exercícios utilizam arquivos locais e podem exigir a criação de arquivos de teste ou a adaptação dos caminhos dos arquivos para funcionar corretamente.
