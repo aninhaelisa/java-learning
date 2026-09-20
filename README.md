@@ -41,7 +41,7 @@ Este repositório documenta minha evolução em Java, reunindo exercícios e pro
 > Nota: Apesar do nome txt, essa pasta também contém arquivos no formato .csv. O nome foi mantido apenas para preservar a estrutura original do projeto.
 
 ## ✍️ Autor
-<br>
+
 [![GitHub](https://img.shields.io/badge/GitHub-Perfil-000?logo=github)](https://github.com/aninhaelisa)<br>
 
 © 2026 Ana Elisa
