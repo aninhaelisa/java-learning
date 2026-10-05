@@ -1,6 +1,8 @@
 package gui;
 
+import gui.util.Alerts;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 
 public class ViewController {
@@ -10,6 +12,6 @@ public class ViewController {
 
     @FXML
     public void onBtClick() {
-        System.out.println("Button clicked!");
+        Alerts.showAlert("Alert Title", "Alert Header", "This is the alert content.", AlertType.INFORMATION);
     }
 }
