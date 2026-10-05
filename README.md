@@ -38,11 +38,14 @@ Este repositório documenta minha evolução em Java, reunindo exercícios e pro
 
 > Aviso: Este é um repositório de aprendizado. Alguns exercícios utilizam arquivos locais e podem exigir a criação de arquivos de teste ou a adaptação dos caminhos dos arquivos para funcionar corretamente.
 
-> Nota: Apesar do nome txt, essa pasta também contém arquivos no formato .csv. O nome foi mantido apenas para preservar a estrutura original do projeto.
+### STATUS - Projeto `java-learning` foi concluído.
+Este projeto foi iniciado em **5 de abril de 2026** e finalizado em **5 de outubro de 2026**. Desenvolvido ao longo de aproximadamente 6 meses para consolidar meus estudos e práticas em Java.
 
 ## Licença
 
 Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+
 
 ## ✍️ Autor
 
